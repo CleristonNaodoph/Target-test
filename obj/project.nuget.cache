@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Wa3zSb2GUZQDnafHBE6hoCcsrheBJQ0wnVKYgWEnW5p7PK0ZOScj01pXmKFzTWANtG3h1QsgiYAWsfaPXrSaTw==",
+  "success": true,
+  "projectFilePath": "C:\\Programas\\TargetTest\\TargetTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Clériston\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

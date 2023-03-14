@@ -1,0 +1,17 @@
+C:\Programas\TargetTest\obj\Debug\net7.0\TargetTest.csproj.AssemblyReference.cache
+C:\Programas\TargetTest\obj\Debug\net7.0\TargetTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programas\TargetTest\obj\Debug\net7.0\TargetTest.AssemblyInfoInputs.cache
+C:\Programas\TargetTest\obj\Debug\net7.0\TargetTest.AssemblyInfo.cs
+C:\Programas\TargetTest\obj\Debug\net7.0\TargetTest.csproj.CoreCompileInputs.cache
+C:\Programas\TargetTest\bin\Debug\net7.0\TargetTest.exe
+C:\Programas\TargetTest\bin\Debug\net7.0\TargetTest.deps.json
+C:\Programas\TargetTest\bin\Debug\net7.0\TargetTest.runtimeconfig.json
+C:\Programas\TargetTest\bin\Debug\net7.0\TargetTest.dll
+C:\Programas\TargetTest\bin\Debug\net7.0\TargetTest.pdb
+C:\Programas\TargetTest\obj\Debug\net7.0\TargetTest.dll
+C:\Programas\TargetTest\obj\Debug\net7.0\refint\TargetTest.dll
+C:\Programas\TargetTest\obj\Debug\net7.0\TargetTest.pdb
+C:\Programas\TargetTest\obj\Debug\net7.0\TargetTest.genruntimeconfig.cache
+C:\Programas\TargetTest\obj\Debug\net7.0\ref\TargetTest.dll
+C:\Programas\TargetTest\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Programas\TargetTest\obj\Debug\net7.0\TargetTest.csproj.CopyComplete
