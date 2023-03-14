@@ -10,9 +10,9 @@ namespace Target
         {
             int? opcao;
 
+            /* Menu com as opções  */
             do
             {
-
                 try
                 {
                     Console.WriteLine("Selecione o número que deseja no Menu abaixo: ");
@@ -25,11 +25,15 @@ namespace Target
                     switch (opcao)
                     {
                         case 1:
+
+                            /*  Chamada da função de somatório */
                             pergunta1();
                             break;
                         case 2:
                             Console.WriteLine("--- Segunda questão ---\n Digite o numero da Fibonacci a ser verificado:");
                             int fibo = int.Parse(Console.ReadLine());
+
+                            /* Função que verifica se o numero faz parte da Fibonacci */
                             Boolean ret = pergunta2(fibo);
 
                             if (ret == true)
@@ -47,6 +51,7 @@ namespace Target
                             Console.WriteLine("3 - Terceira Pergunta");
 
                             List<Filial> faturamento = new List<Filial>();
+                            /*  Função que deserializa o Json e retorna a lista de dias com faturamento */
                             faturamento = adquirirdados();
                             int qtDias = faturamento.Count;
 
@@ -56,7 +61,7 @@ namespace Target
                             double media;
                             int qtDiasFat = 0;
 
-
+                            /* Separa o maior faturamento e menor, alem de somar para calcular a média  */
                             foreach (Filial Fl in faturamento)
                             {
                                 soma += Fl.valor;
@@ -70,6 +75,7 @@ namespace Target
                                 }
                             }
                             media = soma / qtDias;
+                            /* Verificar dias onde o faturamento é maior que a média  */
                             foreach (Filial Fl in faturamento)
                             {
                                 if (Fl.valor >= media)
@@ -84,6 +90,7 @@ namespace Target
 
                             break;
                         case 4:
+                            /* Lista de estados, e atribuição de dados  */
                             List<Estado_fat> dist = new List<Estado_fat>();
                             dist.Add(new Estado_fat("SP", 67836.43));
                             dist.Add(new Estado_fat("RJ", 36678.66));
@@ -93,10 +100,13 @@ namespace Target
 
                             double total = 0;
                             double part = 0;
+                            /*  Abaixo, o somatório de faturamento */
                             foreach (Estado_fat Estado_fat in dist)
                             {
                                 total += Estado_fat.Faturamento;
                             }
+
+                            /*  Estado e percentual de participação de cada estado */
                             foreach (Estado_fat Estado_fat in dist)
                             {
                                 part = Estado_fat.participacao(Estado_fat.Faturamento, total);
@@ -107,6 +117,8 @@ namespace Target
                         case 5:
                             Console.WriteLine("--- Digite a String a ser invertida:");
                             string str = Console.ReadLine();
+
+                            /* Chamada de função para inverter a String  */
                             string invert = pergunta5(str);
                             Console.WriteLine(invert + "\n\n");
                             break;
@@ -127,7 +139,7 @@ namespace Target
             } while (opcao != 0);
 
 
-
+            /*  Somatório da primeira questão */
             static void pergunta1()
             {
                 Console.Clear();
@@ -139,7 +151,7 @@ namespace Target
                 }
                 Console.WriteLine($"--- Primeira Questão ---\n O somatório final é {soma}\n\n");
             }
-
+            /* Função que verifica se o numero faz parte da fibonacci  */
             static Boolean pergunta2(int fibo)
             {
                 int temp, primeiro = 0, segundo = 1, soma = 0;
@@ -160,6 +172,8 @@ namespace Target
                         return false;
                 }
             }
+
+            /* Função que realiza a inversão de string através de pilhagem  */
             static string pergunta5(string str)
             {
                 string invert = new string((new Stack<char>(str)).ToArray());
@@ -174,13 +188,13 @@ namespace Target
         {
             List<Filial> arquivo = new List<Filial>();
             List<Filial> fat = new List<Filial>();
-
+            /* Obs, Alterar o caminho de onde o Json será buscado  */
             using (StreamReader stream = new StreamReader(@"C:\Programas\TargetTest\dados.json"))
             {
                 string dadosJson = stream.ReadToEnd();
                 arquivo = JsonConvert.DeserializeObject<List<Filial>>(dadosJson);
             }
-
+            /*  Verificar os dias com faturamento, para ignorar os dias fechados no calculo da média */
             foreach (Filial fl in arquivo)
             {
                 if (fl.valor > 0)
@@ -188,18 +202,10 @@ namespace Target
                     fat.Add(fl);
                 }
             }
-
+            /* retorna a lista apenas com dias onde teve faturamento  */
             return fat;
         }
-
-
-
-
-
-
     }
-
-
 }
 
 
